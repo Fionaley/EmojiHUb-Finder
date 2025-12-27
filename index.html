@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EmojiHub Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+     
+      <img src="emojihub.png" alt="EmojiHub Logo" class="logo">
+      
+      <div class="title-center">
+         <h1>EmojiHub Finder</h1>
+        <p class="subtitle">Search, filter, or roll a random emoji.</p>
+      </div>
+    </div>
+
+    <!-- Favorites button + Dark mode toggle -->
+    <div class="top-actions">
+      <button id="favoritesBtn" class="ghost-btn" type="button" aria-label="Show favorites">
+        ★ Favorites <span id="favCount" class="badge">0</span>
+      </button>
+      <button id="themeToggle" class="ghost-btn" type="button" aria-label="Toggle dark mode">
+        🌙 Dark
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- UI Requirements: Search bar + Buttons/Dropdowns + Results container + Error container -->
+    <section class="controls card">
+      <div class="row">
+        <label class="field">
+          <span>Categories…</span>
+          <select id="modeSelect">
+            <option value="random">Random</option>
+            <option value="search">Search by name</option>
+            <option value="category">Filter by category</option>
+            <option value="group">Filter by group</option>
+            
+          </select>
+        </label>
+
+        <label class="field" id="searchField">
+          <span>Search</span>
+          <input id="searchInput" type="text" placeholder="e.g., cat face" autocomplete="off" />
+        </label>
+
+        <label class="field hidden" id="categoryField">
+          <span>Category</span>
+          <select id="categorySelect">
+            <option value="">Loading categories…</option>
+          </select>
+        </label>
+
+        <label class="field hidden" id="groupField">
+          <span>Group</span>
+          <select id="groupSelect">
+            <option value="">Loading groups…</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="fetchBtn" class="primary-btn" type="button">Fetch Emoji</button>
+        <button id="clearBtn" class="ghost-btn" type="button">Clear</button>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loading" class="loading hidden" role="status" aria-live="polite">
+        <span class="spinner" aria-hidden="true"></span>
+        <span>Loading…</span>
+      </div>
+
+      <!-- Error container -->
+      <div id="errorBox" class="error hidden" role="alert"></div>
+    </section>
+
+    <!-- Results container -->
+    <section class="results">
+     
+      <div id="resultsGrid" class="grid"></div>
+    </section>
+  </main>
+
+ 
+
+  <!-- Modal: enlarged emoji preview -->
+  <div id="emojiModal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <div id="modalEmoji" class="modal-emoji" aria-hidden="true">😺</div>
+      <button id="modalCopy" class="primary-btn" type="button">Copy</button>
+      <div class="modal-info">
+        <h3 id="modalName" class="title">Emoji name</h3>
+        <p id="modalUnicode" class="meta">Unicode: U+0000</p>
+      </div>
+    </div>
+  
+  </div>
+ <footer class="footer">
+  Data provided by <a href="https://emojihub.yurace.pro/api" target="_blank">EmojiHub API</a>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>

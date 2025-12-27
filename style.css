@@ -1,0 +1,317 @@
+/* ========= THEME + RESET ========= */
+* { box-sizing: border-box; }
+:root{
+  --bg: #0f172a;
+  --panel: rgba(255,255,255,0.08);
+  /* Solid panel color to avoid transparency when needed (modals) */
+  --panel-solid: #0b1220;
+  --text: #e5e7eb;
+  --muted: rgba(229,231,235,0.75);
+  --border: rgba(255,255,255,0.16);
+  --accent: #facc15;
+  --danger: #fb7185;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+:root[data-theme="light"]{
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --panel-solid: #ffffff;
+  --text: #111827;
+  --muted: rgba(17,24,39,0.7);
+  --border: rgba(17,24,39,0.12);
+  --accent: #2563eb;
+  --danger: #dc2626;
+  --shadow: 0 10px 30px rgba(17,24,39,0.12);
+}
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ========= LAYOUT ========= */
+.topbar{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.top-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+
+.badge{
+  display:inline-block;
+  min-width:18px;
+  padding:2px 6px;
+  border-radius:999px;
+  background: var(--accent);
+  color:#0b1020;
+  font-weight:700;
+  margin-left:8px;
+  font-size:12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;   /* try 4–8px, NOT 12+ */
+}
+
+
+.logo{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+
+.subtitle{
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.wrap{
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.card{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.controls{ padding: 16px; }
+
+.row{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.field span{
+  display:block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+input, select{
+  width:100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  outline: none;
+}
+
+select option{ color:#111; }
+
+.actions{
+  display:flex;
+  gap:10px;
+  margin-top: 12px;
+}
+
+.primary-btn, .ghost-btn{
+  border-radius: 999px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  cursor:pointer;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.primary-btn{
+  background: var(--accent);
+  color: #0b1020;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.ghost-btn{
+  background: transparent;
+  color: var(--text);
+}
+
+.primary-btn:hover, .ghost-btn:hover{ transform: translateY(-1px); }
+.primary-btn:disabled{ opacity: .6; cursor:not-allowed; transform:none; }
+
+/* ========= LOADING + ERROR ========= */
+.loading{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.spinner{
+  width:16px; height:16px;
+  border-radius:50%;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to{ transform: rotate(360deg);} }
+
+.error{
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(251,113,133,0.5);
+  background: rgba(251,113,133,0.12);
+  color: var(--danger);
+}
+
+/* ========= RESULTS (Card layout + Grid + Hover) ========= */
+.results{ margin-top: 18px; }
+.results h2{ margin: 0 0 10px; font-size: 18px; }
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.emoji-card{
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  transition: transform .15s ease;
+  position: relative;
+}
+
+.emoji-card:hover{ transform: translateY(-3px); }
+
+.big-emoji{
+  font-size: 54px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.meta{
+  margin:0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.title{
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* ========= FOOTER ========= */
+.footer{
+  padding: 22px 18px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-align:center;
+}
+.mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+
+/* ========= UTIL ========= */
+.hidden{ display:none !important; }
+
+/* ========= RESPONSIVE (Website) ========= */
+@media (max-width: 920px){
+  .row{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px){
+  .row{ grid-template-columns: 1fr; }
+  .grid{ grid-template-columns: 1fr; }
+}
+
+/* ========= MODAL (enlarged emoji) ========= */
+.modal{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2,6,23,0.6);
+  z-index: 1200;
+  padding: 20px;
+}
+.modal-content{
+  width: min(560px, 96%);
+  background: var(--panel-solid);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  position: relative;
+  text-align: center;
+}
+.modal-close{
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--muted);
+}
+.modal-emoji{
+  font-size: 120px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.modal .primary-btn{
+  display: inline-block;
+  margin: 8px 0 12px;
+  font-weight: 700;
+}
+.modal .primary-btn.copied{
+  opacity: 0.95;
+}
+
+/* Favorite button on cards */
+.fav-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  color: var(--muted);
+}
+.fav-btn.active{
+  background: var(--accent);
+  color: #0b1020;
+  border-color: transparent;
+}
+.fav-btn:focus{ outline: 2px solid rgba(0,0,0,0.08); }
+.modal-info .title{ margin-bottom: 6px; }
+
+@media (max-width: 500px){
+  .modal-emoji{ font-size: 72px; }
+}
+
+
+
+
