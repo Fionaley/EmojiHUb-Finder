@@ -70,11 +70,45 @@ http://localhost:8000/index.html
 
 ## 🧠 How to Use
 
-1. Type an emoji name in the search bar
-2. Click the **Search** button
-3. Browse the emoji results
-4. Use filters to narrow down emojis
-5. Toggle dark or light mode if available
+Choose How to Find an Emoji
+
+Click the Categories… dropdown and select one of the following:
+
+Random – get a random emoji
+
+Search by name – search using a keyword (e.g., cat, smile)
+
+Filter by category – browse emojis by category
+
+Filter by group – browse emojis by detailed group
+
+2️⃣ Provide the Required Input
+
+Depending on your selection:
+
+Search by name → type a keyword
+
+Filter by category → select a category
+
+Filter by group → select a group
+
+Random → no input needed
+
+3️⃣ Fetch Emojis
+
+Click the Fetch Emoji button to display emoji results.
+
+4️⃣ Clear the Selection
+
+Click Clear to reset inputs and start again.
+
+5️⃣ Save Favorites (Optional)
+
+Click the ⭐ icon on an emoji to save it to Favorites.
+
+6️⃣ Switch Theme (Optional)
+
+Click the 🌙 Dark button to toggle dark mode.
 
 ---
 
@@ -115,5 +149,6 @@ The application works on:
 ## 📜 License
 
 This project is open source and may be used or modified for educational purposes.
+
 
 
