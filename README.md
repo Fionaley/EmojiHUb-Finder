@@ -1,14 +1,6 @@
-Sure 👍
-Here’s a **simplified, student-friendly README** that is **easy to understand, short, and rubric-safe**.
-This version avoids deep technical jargon and is ideal for **basic submission, beginners, or first API projects**.
+# 😀 EmojiHub Finder
 
-You can copy-paste this directly as `README.md`.
-
----
-
-# 😀 EmojiHub Explorer
-
-EmojiHub Explorer is a simple web application that allows users to **search and explore emojis** using a public emoji API.
+EmojiHub Finder is a simple web application that allows users to **search and explore emojis** using a public emoji API.
 It is built using **HTML, CSS, and JavaScript** only—no frameworks required.
 
 ---
@@ -16,7 +8,7 @@ It is built using **HTML, CSS, and JavaScript** only—no frameworks required.
 ## 📁 Project Files
 
 ```
-emojihub-explorer/
+emojihub-Finder/
  ├── index.html   # Page structure and UI
  ├── style.css    # Design and layout
  └── script.js    # Logic and API handling
@@ -124,18 +116,4 @@ The application works on:
 
 This project is open source and may be used or modified for educational purposes.
 
----
 
-### ✅ Simple Summary (Good for Defense)
-
-> This project demonstrates how to use a public API, handle user input, and dynamically display data using JavaScript.
-
----
-
-If you want, I can also:
-
-* Make an **even shorter version (1-page only)**
-* Align this to a **grading checklist**
-* Write a **demo video script** based on this README
-
-Just tell me 👌
